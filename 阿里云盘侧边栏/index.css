@@ -37,6 +37,8 @@ body{
     flex-direction: column;
     /* 设置过渡 */
     transition: 0.5s ease;
+    /* 缩小时不让文字换行 */
+    white-space: nowrap;
 }
 
 .left-box ul{
@@ -149,4 +151,56 @@ body{
     font-size: 6vw;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+/* 展开收起开关 */
+.right-box .handler{
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    opacity: 0;
+    transform: translateY(-50%); 
+    z-index: 1;
+    cursor: pointer;
+    /* 过渡 */
+    transition:opacity 0.3s;
+}
+
+.right-box .handler::before,
+.right-box .handler::after{
+    content: "";
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    border-radius: 10px 10px 0 0;
+    transition: 0.2s;
+}
+
+.right-box .handler::after{
+    bottom: 0;
+    border-radius: 0 0 10px 10px;
+}
+
+.right-box:hover .handler{
+    opacity: 1;
+}
+
+.right-box .handler:hover::before{
+    transform: skewX(-15deg);
+}
+
+.right-box .handler:hover::after{
+    transform: skewX(15deg);
+}
+
+.right-box .handler.close:hover::before{
+    transform: skewX(15deg);
+}
+
+.right-box .handler.close:hover::after{
+    transform: skewX(-15deg);
 }
