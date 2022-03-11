@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(200deg, #005bea, #00c6fb);
+}
+
+#plane{
+    color: #fff;
+    font-size: 70px;
+    position: absolute;
+    display: flex;
+
+    /* 水平+垂直居中 */
+    justify-content: center;
+    align-items: center;
+} 
