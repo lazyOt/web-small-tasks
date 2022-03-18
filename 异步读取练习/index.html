@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://fastly.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.34/favicon.ico">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/theme/">
+
+    <title>异步加载表格</title>
+
+    <link href="https://fastly.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.34/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fastly.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.34/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="https://fastly.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.34/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="https://fastly.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.34/examples/theme/theme.css" rel="stylesheet">
+    <script src="https://fastly.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.34/assets/js/ie-emulation-modes-warning.js"></script>
+  </head>
+
+  <body>
+
+
+    <div class="container theme-showcase" role="main">
+
+      <div class="jumbotron">
+        <h1>异步加载表格</h1>
+        <p>采用回调函数和Promise两种方式异步加载表格，并且显示在页面上</p>
+      </div>
+
+      <div class="page-header">
+        <h1>Tables</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>email</th>
+                <th>name</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="page-header">
+        <h1>Buttons</h1>
+      </div>
+      <p>
+        <button type="button" style="margin: 0 20px 0 0;" onclick="loadData()" class="btn btn-lg btn-default">回调函数加载</button>
+        <button type="button" style="margin: 0 20px 0 0;" onclick="promiseLoad()" class="btn btn-lg btn-default">Promise加载</button>
+        <button type="button" class="btn btn-lg btn-info" onclick="cleanTable()">Clean</button>
+      </p>
+    </div> <!-- /container -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="index.js"></script>
+    
+  </body>
+</html>
